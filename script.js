@@ -1,7 +1,7 @@
 var random1to3 = function () {
   var randomDecimal = Math.random() * 3;
   var randomInteger = Math.floor(randomDecimal); //
-  return randomInteger + 1;
+  return 1;
 };
 
 var diceRoll = function () {
@@ -21,17 +21,21 @@ var main = function (input) {
   console.log(gameNumber);
   console.log(">>> withInNmber in Current Round = ");
   console.log(withInNmber);
-  var randomDiceRoll = diceRoll();
+  var randomDiceRoll1 = 4;
+  var randomDiceRoll2 = 6;
   console.log(">>>>>  Dice Rolled");
-  console.log(randomDiceRoll);
-  var myOutputValue = `For this round, you win if your guesss is within ${withInNmber} of the dice roll. <br><br> You guessed ${input}.<br><br>.You rolled a ${randomDiceRoll}. <br><br> >>>>> You lose, please try again. `;
+  console.log(randomDiceRoll1);
+  var myOutputValue = `For this round, you win if your guesss is within ${withInNmber} of either one of the dice rolls. <br><br> You guessed ${input}.<br><br>.You rolled a ${randomDiceRoll1} and a ${randomDiceRoll2}. <br><br> >>>>> You lose, please try again. `;
 
-  var winMsg = `For this round, you win if your guesss is within ${withInNmber} of the dice roll. <br><br> You guessed ${input}.<br><br>.You rolled a ${randomDiceRoll}. <br><br> >>>>> YOU WIN! <br><br>The difficulty will now be changed. `;
+  var winMsg = `For this round, you win if your guesss is within ${withInNmber} of either one of the dice rolls. <br><br> You guessed ${input}.<br><br>.You rolled a ${randomDiceRoll1} and a ${randomDiceRoll2}. <br><br> >>>>> YOU WIN! <br><br>The difficulty will now be changed. `;
 
   if (
-    input == randomDiceRoll ||
-    (input > randomDiceRoll && input - randomDiceRoll <= withInNmber) ||
-    (randomDiceRoll > input && randomDiceRoll - input <= withInNmber)
+    input == randomDiceRoll1 ||
+    (input > randomDiceRoll1 && input - randomDiceRoll1 <= withInNmber) ||
+    (randomDiceRoll1 > input && randomDiceRoll1 - input <= withInNmber) ||
+    input == randomDiceRoll2 ||
+    (input > randomDiceRoll2 && input - randomDiceRoll2 <= withInNmber) ||
+    (randomDiceRoll2 > input && randomDiceRoll2 - input <= withInNmber)
   ) {
     myOutputValue = winMsg;
     withInNmber = random1to3();
