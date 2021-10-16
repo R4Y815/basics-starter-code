@@ -1,7 +1,7 @@
 var random1to3 = function () {
   var randomDecimal = Math.random() * 3;
   var randomInteger = Math.floor(randomDecimal); //
-  return 1;
+  return randomInteger + 1;
 };
 
 var diceRoll = function () {
@@ -21,8 +21,8 @@ var main = function (input) {
   console.log(gameNumber);
   console.log(">>> withInNmber in Current Round = ");
   console.log(withInNmber);
-  var randomDiceRoll1 = 4;
-  var randomDiceRoll2 = 6;
+  var randomDiceRoll1 = diceRoll();
+  var randomDiceRoll2 = diceRoll();
   console.log(">>>>>  Dice Rolled");
   console.log(randomDiceRoll1);
   var myOutputValue = `For this round, you win if your guesss is within ${withInNmber} of either one of the dice rolls. <br><br> You guessed ${input}.<br><br>.You rolled a ${randomDiceRoll1} and a ${randomDiceRoll2}. <br><br> >>>>> You lose, please try again. `;
