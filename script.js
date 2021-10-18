@@ -150,5 +150,3 @@ var main = function (input) {
   console.log(readSecretWordNmbr(memoryPrevSecretWord));
   return myOutputValue;
 };
-
-// TO KEEP SCORE OF THE CORRECT WORD
